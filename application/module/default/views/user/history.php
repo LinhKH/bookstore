@@ -5,11 +5,11 @@
 		$tableHeader = '<tr class="cart_title"><td>Item pic</td><td>Book name</td><td>Unit price</td><td>Qty</td><td>Total</td></tr>';
 		foreach($this->Items as $key => $value){
 			
-			$cartId			= $value['id'];
-			$date			= date("H:i d/m/Y", strtotime($value['date']));
-			$arrBookID		= json_decode($value['books']);
-			$arrPrice		= json_decode($value['prices']);
-			$arrName		= json_decode($value['names']);
+			$cartId			  = $value['id'];
+			$date			    = date("H:i d/m/Y", strtotime($value['date']));
+			$arrBookID	  = json_decode($value['books']);
+			$arrPrice		  = json_decode($value['prices']);
+			$arrName		  = json_decode($value['names']);
 			$arrQuantity	= json_decode($value['quantities']);
 			$arrPicture		= json_decode($value['pictures']);
 			$tableContent	= '';
@@ -25,28 +25,28 @@
 				}
 				$totalPrice		+= $arrQuantity[$keyB] * $arrPrice[$keyB];
 				$tableContent .= '<tr>
-								<td><a href="'.$linkDetail.'">'.$picture.'</a></td>
-								<td class="name">'.$arrName[$keyB].'</td>
-								<td>'.number_format($arrPrice[$keyB]).'</td>
-								<td>'.$arrQuantity[$keyB].'</td>
-								<td>'.number_format($arrQuantity[$keyB] * $arrPrice[$keyB]).'</td>
-							</tr>';
+                            <td><a href="'.$linkDetail.'">'.$picture.'</a></td>
+                            <td class="name">'.$arrName[$keyB].'</td>
+                            <td>'.number_format($arrPrice[$keyB]).'</td>
+                            <td>'.$arrQuantity[$keyB].'</td>
+                            <td>'.number_format($arrQuantity[$keyB] * $arrPrice[$keyB]).'</td>
+                          </tr>';
 			}
 			
 			
 			
 			$xhtml .= '<div class="history-cart">
-							<h3>Mã đơn hàng:'.$cartId.' - Thời gian: '.$date.'</h3>
-							<table class="cart_table">
-								<tbody>
-									'.$tableHeader.$tableContent.'
-									<tr>
-										<td colspan="4" class="cart_total"><span class="red">TOTAL:</span></td>
-										<td>'.number_format($totalPrice).'</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>';
+                    <h3>Mã đơn hàng:'.$cartId.' - Thời gian: '.$date.'</h3>
+                    <table class="cart_table">
+                      <tbody>
+                        '.$tableHeader.$tableContent.'
+                        <tr>
+                          <td colspan="4" class="cart_total"><span class="red">TOTAL:</span></td>
+                          <td>'.number_format($totalPrice).'</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>';
 		}
 	}else{
 		$xhtml = '<h3>Chưa có đơn hàng nào!</h3>';

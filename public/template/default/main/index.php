@@ -19,7 +19,7 @@
         </div>
         
 	      <div class="right_content">
-	        <?php include_once BLOCK_PATH . 'language.php';?>
+	        <?php //include_once BLOCK_PATH . 'language.php';?>
           <?php include_once BLOCK_PATH . 'cart.php';?>
           <?php include_once BLOCK_PATH . 'category.php';?>
           <?php include_once BLOCK_PATH . 'promotion.php';?>
