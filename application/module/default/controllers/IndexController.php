@@ -36,8 +36,8 @@ class IndexController extends Controller {
 				
 			$validate = new Validate($this->_arrParam['form']);
 			$validate->addRule('username', 'string-notExistRecord', array('database' => $this->_model, 'query' => $queryUserName, 'min' => 3, 'max' => 25))
-					 ->addRule('email', 'email-notExistRecord', array('database' => $this->_model, 'query' => $queryEmail));
-					//  ->addRule('password', 'password', array('action' => 'add'));
+					    ->addRule('email', 'email-notExistRecord', array('database' => $this->_model, 'query' => $queryEmail))
+					    ->addRule('password', 'password', array('action' => 'add'));
 				
 			$validate->run();
 				

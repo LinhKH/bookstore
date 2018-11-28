@@ -8,5 +8,4 @@
 	
 	$bootstrap = new Bootstrap();
   $bootstrap->init();
-  //test
 ?>

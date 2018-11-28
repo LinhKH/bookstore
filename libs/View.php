@@ -8,7 +8,7 @@ class View{
 	public $_metaName;
 	public $_cssFiles;
 	public $_jsFiles;
-	// public $_dirImg;
+	public $_dirImg;
 	public $_fileView;
 	
 	public function __construct($moduleName){
@@ -19,7 +19,7 @@ class View{
 		$path = MODULE_PATH. $this->_moduleName . DS . 'views' . DS . $fileInclude . '.php';
 		if(file_exists($path)){
 			if($loadFull == true){
-        $this->_fileView = $path;
+        $this->_fileView = $fileInclude;
 				require_once $this->getTemplatePath();
 			}else{
 				require_once $path;
@@ -41,7 +41,7 @@ class View{
 	// CREATE CSS - JS
 	public function createLink($path, $files, $type = 'css'){
 		$xhtml = '';
-		if(!empty($files)) {
+		if(!empty($files)){
 			$path = TEMPLATE_URL . $path . DS;
 			foreach($files as $file){
 				if($type == 'css'){
