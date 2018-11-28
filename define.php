@@ -11,7 +11,8 @@
 	define ('MODULE_PATH'		, APPLICATION_PATH . 'module' . DS);		      // Định nghĩa đường dẫn đến thư mục module							
 	define ('BLOCK_PATH'		, APPLICATION_PATH . 'block' . DS);			      // Định nghĩa đường dẫn đến thư mục block							
 	define ('TEMPLATE_PATH'		, PUBLIC_PATH . 'template' . DS);			      // Định nghĩa đường dẫn đến thư mục template							
-	
+  
+  // Đường dẫn tương đối
 	define	('ROOT_URL'			, DS . 'bookstore' . DS);
 	define	('APPLICATION_URL'	, ROOT_URL . 'application' . DS);
 	define	('PUBLIC_URL'		, ROOT_URL . 'public' . DS);

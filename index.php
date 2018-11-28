@@ -7,5 +7,6 @@
 	Session::init();
 	
 	$bootstrap = new Bootstrap();
-	$bootstrap->init();
+  $bootstrap->init();
+  //test
 ?>
