@@ -6,7 +6,7 @@
 	
 	// Row
 	$rowPassword	= Helper::cmsRow('Password', Helper::cmsInput('text', 'form[password]', 'password', null, 'contact_input'));
-	$rowEmail		= Helper::cmsRow('Email', Helper::cmsInput('text', 'form[email]', 'email', null, 'contact_input'));
+	$rowEmail		  = Helper::cmsRow('Email', Helper::cmsInput('text', 'form[email]', 'email', null, 'contact_input'));
 	$rowSubmit		= Helper::cmsRow('Submit', $inputToken . $inputSubmit, true);
 	
 	$linkAction		= URL::createLink('default', 'index', 'login');
@@ -18,7 +18,7 @@
 <div class="feat_prod_box_details">
 	<div class="contact_form">
 		<div class="form_subtitle">login</div>
-		<?php echo isset($this->errors) ? $this->errors : '';?>
+		<?php echo @$this->errors;?>
 		<form name="adminform" action="<?php echo $linkAction?>" method="POST">
 			<?php echo $rowEmail . $rowPassword .  $rowSubmit;?>
 		</form>

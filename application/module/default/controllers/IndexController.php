@@ -12,7 +12,7 @@ class IndexController extends Controller {
 	public function noticeAction(){
 		$this->_view->render('index/notice');
 	}
-	
+	# Index
 	public function indexAction(){
 		$this->_view->_title	= 'Book Store';
 		
@@ -20,7 +20,7 @@ class IndexController extends Controller {
 		$this->_view->newBooks		= $this->_model->listItem($this->_arrParam, array('task' => 'books-new'));
 		$this->_view->render('index/index');
 	}
-
+  # Gegister
 	public function registerAction(){
     $this->_view->_title = "BookStore::Register";
 		$userInfo	= Session::get('user');
@@ -45,7 +45,6 @@ class IndexController extends Controller {
 			if($validate->isValid() == false){
 				$this->_view->errors = $validate->showErrorsPublic();
 			} else {
-        // var_dump($this->_arrParam);die;
 				$id	= $this->_model->saveItem($this->_arrParam, array('task' => 'user-register'));
 				URL::redirect('default', 'index', 'notice', array('type' => 'register-success'));
 			}	
@@ -56,8 +55,9 @@ class IndexController extends Controller {
 	public function logoutAction(){
 		Session::delete('user');
 		URL::redirect('default', 'index', 'index', null, 'index.html');
-	}
-
+  }
+  
+  # Login
 	public function loginAction() {
     $userInfo	= Session::get('user');
 		if($userInfo['login'] == true && $userInfo['time'] + TIME_LOGIN >= time()) {
@@ -76,15 +76,15 @@ class IndexController extends Controller {
           
         if($validate->isValid()==true){
           $infoUser		= $this->_model->infoItem($this->_arrParam);
-          $arraySession	= array(
-              'login'		=> true,
-              'info'		=> $infoUser,
-              'time'		=> time(),
-              'group_acp'	=> $infoUser['group_acp']
-          );
+          $arraySession	= [
+                            'login'		=> true,
+                            'info'		=> $infoUser,
+                            'time'		=> time(),
+                            'group_acp'	=> $infoUser['group_acp']
+                          ];
           Session::set('user', $arraySession);
           URL::redirect('default', 'user', 'index', null, 'my-account.html');
-        }else{
+        } else {
           $this->_view->errors	= $validate->showErrorsPublic();
         }
       }
