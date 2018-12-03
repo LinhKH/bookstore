@@ -9,11 +9,11 @@
 	$xhtml = '';
 	foreach ($arrMenu as $value){
 		$xhtml .= '<div class="new_prod_box">
-					<a href="'.$value[2].'">'.$value[0].'</a>
-					<div class="new_prod_bg">
-						<a href="'.$value[2].'"><img class="thumb" src="'.$imageURL . DS . $value[1].'"></a>
-					</div>
-				</div>';
+                <a href="'.$value[2].'">'.$value[0].'</a>
+                <div class="new_prod_bg">
+                  <a href="'.$value[2].'"><img class="thumb" src="'.$imageURL . DS . $value[1].'"></a>
+                </div>
+              </div>';
 	}
 ?>
 

@@ -1,20 +1,20 @@
 <?php
 class Pagination{
 	
-	private $totalItems;					// Tổng số phần tử
+	private $totalItems;					      // Tổng số phần tử
 	private $totalItemsPerPage		= 1;	// Tổng số phần tử xuất hiện trên một trang
-	private $pageRange				= 5;	// Số trang xuất hiện
-	private $totalPage;						// Tổng số trang
-	private $currentPage			= 1;	// Trang hiện tại
+	private $pageRange				    = 5;	// Số trang xuất hiện
+	private $totalPage;						      // Tổng số trang
+	private $currentPage			    = 1;	// Trang hiện tại
 	
 	public function __construct($totalItems, $pagination){
 		$this->totalItems			= $totalItems;
 		$this->totalItemsPerPage	= $pagination['totalItemsPerPage'];
 		
-		if($pagination['pageRange'] %2 == 0) $pagination['pageRange'] = $pagination['pageRange'] + 1;
+		if($pagination['pageRange'] %2 == 0) $pagination['pageRange'] = $pagination['pageRange'] + 1; // Chuyển pageRange từ chẵn sang lẻ. Do Class Pagination này chỉ áp dụng cho pageRange lẻ
 		
 		$this->pageRange			= $pagination['pageRange'];
-		$this->currentPage			= $pagination['currentPage'];
+		$this->currentPage		= $pagination['currentPage'];
 		$this->totalPage			= ceil($totalItems/$pagination['totalItemsPerPage']);
 	}
 	

@@ -73,14 +73,14 @@ class UserModel extends Model{
 	public function saveItem($arrParam, $option = null){
 	
 		if($option['task'] == 'submit-cart'){
-			$id			= $this->randomString(7);
-			$username	= $this->_userInfo['username'];
-			$books		= json_encode($arrParam['form']['bookid']);
-			$prices		= json_encode($arrParam['form']['price']);
+			$id			    = $this->randomString(7);
+			$username	  = $this->_userInfo['username'];
+			$books		  = json_encode($arrParam['form']['bookid']);
+			$prices		  = json_encode($arrParam['form']['price']);
 			$quantities	= json_encode($arrParam['form']['quantity']);
-			$names		= json_encode($arrParam['form']['name']);
-			$pictures	= json_encode($arrParam['form']['picture']);
-			$date		= date('Y-m-d H:i:s', time());
+			$names		  = json_encode($arrParam['form']['name']);
+			$pictures	  = json_encode($arrParam['form']['picture']);
+			$date		    = date('Y-m-d H:i:s', time());
 			
 			$query	= "INSERT INTO `".TBL_CART."`(`id`, `username`, `books`, `prices`, `quantities`, `names`, `pictures`, `status`, `date`)
 					VALUES ('$id', '$username', '$books', '$prices', '$quantities', '$names', '$pictures', '0', '$date')";
@@ -96,7 +96,7 @@ class UserModel extends Model{
 		$arrCharacter = implode($arrCharacter, '');
 		$arrCharacter = str_shuffle($arrCharacter);
 	
-		$result		= substr($arrCharacter, 0, $length);
+		$result		    = substr($arrCharacter, 0, $length);
 		return $result;
 	}
 }
