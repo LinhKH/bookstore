@@ -15,8 +15,8 @@ class Controller{
 	
 	// Pagination
 	protected $_pagination	= array(
-									'totalItemsPerPage'	=> 3,
-									'pageRange'			=> 2,
+									'totalItemsPerPage'	=> 5,
+									'pageRange'			=> 3,
 								);
 	
 	public function __construct($arrParams){
@@ -28,7 +28,7 @@ class Controller{
 		$arrParams['pagination'] = $this->_pagination;
 		$this->setParams($arrParams);
 		
-		$this->_view->arrParam = $arrParams;
+		$this->_view->arrParam = $arrParams; // Truyền biến arrParam ra view dùng chung
 	}
 	
 	// SET MODEL
@@ -66,22 +66,22 @@ class Controller{
 		return $this->_templateObj;
 	}
 	
-	// GET PARAMS
+	// SET PARAMS
 	public function setParams($arrParam){
 		$this->_arrParam= $arrParam;
 	}
 	
-	// SET PARAMS
-	public function getParams($arrParam){
-		$this->_arrParam= $arrParam;
+	// GET PARAMS
+	public function getParams(){
+		return $this->_arrParam;
 	}
 	
 	// SET PAGINATION
 	public function setPagination($config){
 		$this->_pagination['totalItemsPerPage'] = $config['totalItemsPerPage'];
-		$this->_pagination['pageRange']			= $config['pageRange'];
-		$this->_arrParam['pagination']			= $this->_pagination;
-		$this->_view->arrParam					= $this->_arrParam;
+		$this->_pagination['pageRange']			    = $config['pageRange'];
+		$this->_arrParam['pagination']			    = $this->_pagination;
+		$this->_view->arrParam					        = $this->_arrParam;
 	}
 	
 }

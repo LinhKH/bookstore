@@ -112,22 +112,22 @@
 									$modified_by= $value['modified_by'];
 									$linkEdit	= URL::createLink('admin', 'book', 'form', array('id' => $id));
 								
-		                           	echo  '<tr class="'.$row.'">
-		                                	<td class="center">'.$ckb.'</td>
-		                                	<td><a href="'.$linkEdit.'">'.$name.'</a></td>
-			                                <td class="center">'.$picture.'</td>
-			                                <td class="center">'.$price.'</td>
-			                                <td class="center">'.$saleoff.'</td>
-			                                <td class="center">'.$categoryName.'</td>
-			                                <td class="center">'.$status.'</td>
-			                                <td class="center">'.$special.'</td>
-			                                <td class="order">'.$ordering.'</td>
-			                                <td class="center">'.$created.'</td>
-			                                <td class="center">'.$created_by.'</td>
-			                                <td class="center">'.$modified.'</td>
-			                                <td class="center">'.$modified_by.'</td>
-			                                <td class="center">'.$id.'</td>
-			                            </tr>';	
+                      echo  '<tr class="'.$row.'">
+                            <td class="center">'.$ckb.'</td>
+                            <td><a href="'.$linkEdit.'">'.$name.'</a></td>
+                            <td class="center">'.$picture.'</td>
+                            <td class="center">'.$price.'</td>
+                            <td class="center">'.$saleoff.'</td>
+                            <td class="center">'.$categoryName.'</td>
+                            <td class="center">'.$status.'</td>
+                            <td class="center">'.$special.'</td>
+                            <td class="order">'.$ordering.'</td>
+                            <td class="center">'.$created.'</td>
+                            <td class="center">'.$created_by.'</td>
+                            <td class="center">'.$modified.'</td>
+                            <td class="center">'.$modified_by.'</td>
+                            <td class="center">'.$id.'</td>
+                        </tr>';	
 									$i++;
 								}
               }

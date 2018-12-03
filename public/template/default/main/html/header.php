@@ -2,11 +2,11 @@
 	$imageURL		= $this->_dirImg;
 	
 	// Create Link
-	$linkHome		= URL::createLink('default', 'user', 'index', null, 'index.html');
-	$linkCat		= URL::createLink('default', 'category', 'index', null, 'category.html');
+	$linkHome		    = URL::createLink('default', 'user', 'index', null, 'index.html');
+	$linkCat		    = URL::createLink('default', 'category', 'index', null, 'category.html');
 	$linkMyAccount	= URL::createLink('default', 'user', 'index', null, 'my-account.html');
-	$linkRegister	= URL::createLink('default', 'index', 'register', null, 'register.html');
-	$linkLogin		= URL::createLink('default', 'index', 'login', null, 'login.html');
+	$linkRegister	  = URL::createLink('default', 'index', 'register', null, 'register.html');
+	$linkLogin		  = URL::createLink('default', 'index', 'login', null, 'login.html');
 	
 	$userObj	  	= Session::get('user');
 	$arrayMenu		= array();
