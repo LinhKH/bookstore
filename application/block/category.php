@@ -15,7 +15,7 @@
 		foreach($data as $key => $value){
 			$name	 		= $value->name;
 			$id				= $value->id;
-			$nameURL		= URL::filterURL($name);
+			$nameURL	= URL::filterURL($name);
 			$link	 		= URL::createLink('default', 'book', 'list', array('category_id' => $id), "$nameURL-$id.html");
 			
 			if($cateID == $value->id){

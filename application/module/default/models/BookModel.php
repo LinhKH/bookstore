@@ -14,14 +14,14 @@ class BookModel extends Model{
 	
 	public function listItem($arrParam, $option = null){
 		if($option['task'] == 'books-in-cat'){
-			$catID		= $arrParam['category_id'];
+			$catID		= @$arrParam['category_id'];
 			$query[]	= "SELECT `id`, `name`, `picture`, `description`, `category_id`";
 			$query[]	= "FROM `$this->table`";
 			$query[]	= "WHERE `status`  = 1 AND `category_id` = '$catID'";
 			$query[]	= "ORDER BY `ordering` ASC";
 	
 			$query		= implode(" ", $query);
-			$result		= $this->fetchAll($query);
+      $result		= $this->fetchAll($query);
 			return $result;
 		}
 		
@@ -42,9 +42,9 @@ class BookModel extends Model{
 	
 	public function infoItem($arrParam, $option = null){
 		if($option['task'] == 'get-cat-name'){
-			$query	= "SELECT `name` FROM `".TBL_CATEGORY."` WHERE `id` = '" . $arrParam['category_id'] . "'";
+			$query	= "SELECT `name` FROM `".TBL_CATEGORY."` WHERE `id` = '" . @$arrParam['category_id'] . "'";
 			$result	= $this->fetchRow($query);
-			return $result['name'];
+			return @$result['name'];
 		}
 		
 		if($option['task'] == 'book-info'){

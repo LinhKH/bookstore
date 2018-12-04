@@ -40,5 +40,5 @@
 	define ('TBL_CART'			, 'cart');
 	
 	// ====================== CONFIG ===========================
-	define ('TIME_LOGIN'		, 3600);
+	define ('TIME_LOGIN'		, 3600); // a hour
 ?>

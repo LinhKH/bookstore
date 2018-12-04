@@ -16,8 +16,7 @@
 	<?php echo Helper::createTitle("$imageURL/cart.gif", 'My cart');?>
 	
 	<div class="home_cart_content">
-		<?php echo $totalItems;?> x items | <span class="red">TOTAL: <?php echo number_format($totalPrices);?></span>
+		<?php echo $totalItems;?> x <?php echo (($totalItems > 1) ?  'items' :  'item'); ?> | <span class="red">TOTAL: <?php echo number_format($totalPrices);?></span>
 	</div>
 	<a href="<?php echo $linkViewCart;?>" class="view_cart">view cart</a>
-
 </div>

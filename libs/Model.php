@@ -8,16 +8,16 @@ class Model{
 	// CONNECT DATABASE
 	public function __construct($params = null){
 		if($params == null){
-			$params['server']	= DB_HOST;
+			$params['server']	  = DB_HOST;
 			$params['username']	= DB_USER;
 			$params['password']	= DB_PASS;
 			$params['database']	= DB_NAME;
-			$params['table']	= DB_TABLE;
+			$params['table']  	= DB_TABLE;
 		}
 		$link = mysqli_connect($params['server'], $params['username'], $params['password']);
 		if(!$link){
-			die('Fail connect: ' . mysql_errno());
-		}else{
+			die('Fail connect: ' . mysqli_errno($link));
+		} else {
 			$this->connect 	= $link;
 			$this->database = $params['database'];
 			$this->table 	= $params['table'];
@@ -47,7 +47,7 @@ class Model{
 	
 	// DISCONNECT DATABASE
 	public function __destruct(){
-		@mysql_close($this->connect);
+		@mysqli_close($this->connect);
 	}
 	
 	// INSERT
@@ -164,6 +164,19 @@ class Model{
 		}
 		return $result;
 	}
+  
+  // SINGLE RECORD (Only One Record)
+	public function fetchRow($query){
+		$result = [];
+		if(!empty($query)){
+			$resultQuery = $this->query($query);
+			if(mysqli_num_rows($resultQuery) > 0){
+				$result = mysqli_fetch_assoc($resultQuery);
+			}
+			mysqli_free_result($resultQuery);
+		}
+		return $result;
+	}
 	
 	// LIST RECORD ['id' => 'name']
 	public function fetchPairs($query){
@@ -179,20 +192,7 @@ class Model{
 		}
 		return $result;
 	}
-	
-	// SINGLE RECORD (Only One Record)
-	public function fetchRow($query){
-		$result = [];
-		if(!empty($query)){
-			$resultQuery = $this->query($query);
-			if(mysqli_num_rows($resultQuery) > 0){
-				$result = mysqli_fetch_assoc($resultQuery);
-			}
-			mysqli_free_result($resultQuery);
-		}
-		return $result;
-	}
-	
+		
 	// EXIST
 	public function isExist($query){
 		if($query != null) {

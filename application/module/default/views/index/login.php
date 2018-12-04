@@ -17,7 +17,7 @@
 
 <div class="feat_prod_box_details">
 	<div class="contact_form">
-		<div class="form_subtitle">login</div>
+		<div class="form_subtitle">Guest login</div>
 		<?php echo @$this->errors;?>
 		<form name="adminform" action="<?php echo $linkAction?>" method="POST">
 			<?php echo $rowEmail . $rowPassword .  $rowSubmit;?>

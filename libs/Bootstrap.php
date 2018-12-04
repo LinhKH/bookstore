@@ -1,6 +1,6 @@
 <?php
 class Bootstrap{
-	
+	// danh dau git hub 1h 12/4/2018
 	private $_params;
 	private $_controllerObject;
 	
@@ -66,7 +66,7 @@ class Bootstrap{
 	
 	// SET PARAMS
 	public function setParam(){
-		$this->_params 					= array_merge($_GET, $_POST);
+		$this->_params 					    = array_merge($_GET, $_POST);
 		$this->_params['module'] 		= isset($this->_params['module']) ? $this->_params['module'] : DEFAULT_MODULE;
 		$this->_params['controller'] 	= isset($this->_params['controller']) ? $this->_params['controller'] : DEFAULT_CONTROLLER;
 		$this->_params['action'] 		= isset($this->_params['action']) ? $this->_params['action'] : DEFAULT_ACTION;

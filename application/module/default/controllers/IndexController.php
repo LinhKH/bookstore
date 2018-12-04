@@ -16,11 +16,11 @@ class IndexController extends Controller {
 	public function indexAction(){
 		$this->_view->_title	= 'Book Store';
 		
-		$this->_view->specialBooks	= $this->_model->listItem($this->_arrParam, array('task' => 'books-special'));
-		$this->_view->newBooks		= $this->_model->listItem($this->_arrParam, array('task' => 'books-new'));
+		$this->_view->specialBooks	= $this->_model->listItem($this->_arrParam, array('task' => 'books-special')); // Sách đặc biệt/ nổi bật
+		$this->_view->newBooks		  = $this->_model->listItem($this->_arrParam, array('task' => 'books-new'));
 		$this->_view->render('index/index');
 	}
-  # Gegister
+  # Register
 	public function registerAction(){
     $this->_view->_title = "BookStore::Register";
 		$userInfo	= Session::get('user');
@@ -32,7 +32,7 @@ class IndexController extends Controller {
 			URL::checkRefreshPage($this->_arrParam['form']['token'], 'default', 'user', 'register');
 				
 			$queryUserName	= "SELECT `id` FROM `".TBL_USER."` WHERE `username` = '".$this->_arrParam['form']['username']."'";
-			$queryEmail		= "SELECT `id` FROM `".TBL_USER."` WHERE `email` = '".$this->_arrParam['form']['email']."'";
+			$queryEmail		  = "SELECT `id` FROM `".TBL_USER."` WHERE `email` = '".$this->_arrParam['form']['email']."'";
 				
 			$validate = new Validate($this->_arrParam['form']);
 			$validate->addRule('username', 'string-notExistRecord', array('database' => $this->_model, 'query' => $queryUserName, 'min' => 3, 'max' => 25))
@@ -52,6 +52,7 @@ class IndexController extends Controller {
 		$this->_view->render('index/register');
 	}
 
+  # Logout
 	public function logoutAction(){
 		Session::delete('user');
 		URL::redirect('default', 'index', 'index', null, 'index.html');
@@ -63,7 +64,6 @@ class IndexController extends Controller {
 		if($userInfo['login'] == true && $userInfo['time'] + TIME_LOGIN >= time()) {
 			URL::redirect('default', 'user', 'index', null, 'my-account.html');
 		}
-	
 		$this->_view->_title 		= 'Login';
     if(isset($this->_arrParam['form'])) {    
       if($this->_arrParam['form']['token'] > 0){
@@ -71,6 +71,7 @@ class IndexController extends Controller {
         $email		= $this->_arrParam['form']['email'];
         $password	= md5($this->_arrParam['form']['password']);
         $query		= "SELECT `id` FROM `user` WHERE `email` = '$email' AND `password` = '$password'";
+
         $validate->addRule('email', 'existRecord', array('database' => $this->_model, 'query' => $query));
         $validate->run();
           
