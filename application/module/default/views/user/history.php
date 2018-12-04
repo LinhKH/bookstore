@@ -13,8 +13,7 @@ if (!empty($this->Items)) {
     $arrQuantity = json_decode($value['quantities']);
     $arrPicture = json_decode($value['pictures']);
     $tableContent = '';
-    $subTotal = 0;
-
+    $subTotal = 0;    
     foreach ($arrBookID as $keyB => $valueB) {
       $linkDetail = URL::createLink('default', 'book', 'detail', array('book_id' => $valueB));
       $picturePath = UPLOAD_PATH . 'book' . DS . '98x150-' . $arrPicture[$keyB];
@@ -33,8 +32,6 @@ if (!empty($this->Items)) {
                         </tr>';
     }
 
-
-
     $xhtml .= '<div class="history-cart">
                 <h3>Mã đơn hàng:' . $cartId . ' - Thời gian: ' . $date . '</h3>
                 <table class="cart_table">
@@ -43,7 +40,7 @@ if (!empty($this->Items)) {
                     <tr>
                       <td colspan="4" class="cart_total"><span class="red">SUB TOTAL:</span></td>
                       <td>' . number_format($subTotal) . '</td>
-                    </tr>
+                    </tr>                    
                   </tbody>
                 </table>
               </div>';

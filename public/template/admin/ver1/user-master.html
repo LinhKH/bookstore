@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>案件一覧</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/select2.min.js"></script>
+        <script type="text/javascript" src="plugin/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script type="text/javascript" src="plugin/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ja.min.js"></script>
+        <script type="text/javascript" src="js/clockpicker.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>
+        <div id="wrapper" class="toggled">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li>
+                        <a href="#"><i class="fas fa-fw fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ログアウト</a>
+                    </li>
+                    <li>
+                        <a href="#project-ichiran" data-toggle="collapse" aria-expanded="true"><i class="far fa-fw fa-file-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;案件管理<span class="pull-right"><i class="fas fa-chevron-down"></i></span></a>
+                        <ul id="project-ichiran" class="collapse">
+                            <li class="">
+                                <a href="#">案件一覧</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#master" data-toggle="collapse" aria-expanded="true"><i class="fas fa-th"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;マスタ管理<span class="pull-right"><i class="fas fa-chevron-down"></i></span></a>
+                        <ul id="master" class="collapse">
+                            <li class="is-active">
+                                <a href="#">ユーザーマスタ</a>
+                            </li>
+                            <li class="">
+                                <a href="#">代理店マスタ</a>
+                            </li>
+                            <li class="">
+                                <a href="#">OA機器マスタ</a>
+                            </li>
+                            <li class="">
+                                <a href="#">汎用マスタ</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="left-sidebar-toggle-button pull-left">
+                        <div id="nav-icon3" class="sidebar-toggle-button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="navbar-logo pull-left">
+                        <img alt="" src="img/logo.png">
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" class="text-color-black">Đây là username</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a class="text-color-black" href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="main container-fluid">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="btn-function btn-group-2 text-center">
+                                    <button type="button" class="btn btn-active">ユーザーマスタ</button>
+                                    <button type="button" class="btn">代理店マスタ</button>
+                                    <button type="button" class="btn">OA機器マスタ</button>
+                                    <button type="button" class="btn">汎用マスタ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-1">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th class="bg-color-grey th-width-1">社員ID</th>
+                                    <td><input type="text" class="form-control"></td>
+                                    <th class="bg-color-grey th-width-1">社員氏名</th>
+                                    <td><input type="text" class="form-control"></td>
+                                    <th class="bg-color-grey th-width-1">社員カナ名</th>
+                                    <td><input type="text" class="form-control"></td>
+                                    <th class="bg-color-grey th-width-1">代理店コード</th>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-color-grey th-width-1">ユーザーID</th>
+                                    <td><input type="text" class="form-control"></td>
+                                    <th class="bg-color-grey th-width-1">メールアドレス</th>
+                                    <td><input type="text" class="form-control"></td>
+                                    <th class="bg-color-grey th-width-1">システム業務役割コード</th>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>test</option>
+                                            <option>test</option>
+                                            <option>test</option>
+                                        </select>
+                                    </td>
+                                    <th class="bg-color-grey th-width-1">有効フラグ</th>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>test</option>
+                                            <option>test</option>
+                                            <option>test</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="btn-function">
+                                <button type="button" class="btn btn-lg btn-primary margin-auto">
+                                    <span><i class="fas fa-search"></i></span>&nbsp;検索
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row btn-function text-right">
+                            <ul class="pagination pull-left">
+                                <li class=""><a href="#"><span aria-hidden="true">&laquo;</span></a></li>
+                                <li class=""><a href="#"><span aria-hidden="true">&lt;</span></a></li>
+                                <li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
+                                <li class=""><a href="#">2<span class="sr-only">(current)</span></a></li>
+                                <li class=""><a href="#">3<span class="sr-only">(current)</span></a></li>
+                                <li class=""><a href="#">...<span class="sr-only">(current)</span></a></li>
+                                <li class=""><a href="#">8<span class="sr-only">(current)</span></a></li>
+                                <li class=""><a href="#">9<span class="sr-only">(current)</span></a></li>
+                                <li class=""><a href="#">10<span class="sr-only">(current)</span></a></li>
+                                <li class=""><a href="#"><span aria-hidden="true">&gt;</span></a></li>
+                                <li class=""><a href="#"><span>&raquo;</span></a></li>
+                            </ul>
+                            <span class="btn-group inline-block">
+                                <button type="button" class="btn btn-active">10 件</button>
+                                <button type="button" class="btn">20 件</button>
+                                <button type="button" class="btn">50 件</button>
+                                <button type="button" class="btn">100 件</button>
+                            </span>
+                            <span class="h5 text-right inline-block"><strong>100 / 250 件</strong></span>
+                            <span class="inline-block">
+                                <a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-user-master">登録</a>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-fix-header-padding">
+                                    <table class="table table-bordered table-header">
+                                        <tr>
+                                            <th class="col-sm-1 col-md-1 col-lg-1 bg-color-grey">依頼日</th>
+                                            <th class="col-sm-1 col-md-1 col-lg-1 bg-color-grey">案件進捗</th>
+                                            <th class="col-sm-1 col-md-1 col-lg-1 bg-color-grey">代理店名</th>
+                                            <th class="col-sm-1 col-md-1 col-lg-1 bg-color-grey">申込会社名</th>
+                                            <th class="col-sm-1 col-md-1 col-lg-1 bg-color-grey">審査状況</th>
+                                            <th class="col-sm-1 col-md-1 col-lg-1 bg-color-grey">発注日</th>
+                                            <th class="col-sm-1 col-md-1 col-lg-1 bg-color-grey">工事確定日</th>
+                                            <th class="col-sm-1 col-md-1 col-lg-1 bg-color-grey">工事完了日</th>
+                                            <th class="col-sm-2 col-md-2 col-lg-2 bg-color-grey">検収依頼日</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="data-overflow-4">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1 col-lg-1">ファイル名</td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-1 col-md-1 col-lg-1"></td>
+                                            <td class="col-sm-2 col-md-2 col-lg-2 text-center">
+                                                <button class="btn btn-sm btn-primary">編集</button>&nbsp;&nbsp;
+                                                <button class="btn btn-sm btn-danger bg-color-danger">Reset Password</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MODAL ORDER -->
+            <div id="modal-user-master" class="modal fade">
+                <div class="modal-dialog modal-lg " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">社員登録・更新</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-offset-1 col-lg-10">
+                                    <table class="table table-bordered text-left">
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">社員ID<span class="text-color-red">&nbsp;*</span></th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">社員氏名<span class="text-color-red">&nbsp;*</span></th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">社員カナ名</th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">社員区分コード</th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">所属部門コード</th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">システム業務役割コード<span class="text-color-red">&nbsp;*</span></th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <select class="form-control">
+                                                        <option>test</option>
+                                                        <option>test</option>
+                                                        <option>test</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">代理店コード<span class="text-color-red">&nbsp;*</span></th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <select class="form-control select-2-custom">
+                                                        <option>test</option>
+                                                        <option>test</option>
+                                                        <option>test</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">役職コード</th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">ユーザーID<span class="text-color-red">&nbsp;*</span></th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">メールアドレス</th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">パスワード<span class="text-color-red">&nbsp;*</span></th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-lg-4 bg-color-grey text-left">システム業務役割コード<span class="text-color-red">&nbsp;*</span></th>
+                                            <td class="">
+                                                <div class="form-group no-margin">
+                                                    <select class="form-control">
+                                                        <option>test</option>
+                                                        <option>test</option>
+                                                        <option>test</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-sm btn-primary">保存</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>案件一覧</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/select2.min.js"></script>
+        <script type="text/javascript" src="plugin/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script type="text/javascript" src="plugin/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ja.min.js"></script>
+        <script type="text/javascript" src="js/clockpicker.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body class="is-home">
+        <div class="login">
+            <div class="login-background"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="login-form">
+                        <div class="login-form-background"></div>
+                        <div class="welcome">
+                            <p class="text-color-white">WELCOME TO<br>AGENCY MANAGEMENT</p>
+                        </div>
+                        <div class="tab-content clearfix">
+                            <!--  LOGIN TAB -->
+                            <div id="login" class="tab-pane fade in active clearfix">
+                                <div class="col-lg-offset-2 col-lg-8">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-1 col-lg-1">
+                                                <img src="img/email-icon.png" class="icon-email" alt="">
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <input type="email" class="form-control form-login-detail" placeholder="ユーザーID">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-1 col-lg-1">
+                                                <img src="img/lock-icon.png" class="icon-lock" alt="">
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <input type="password" class="form-control form-login-detail" placeholder="パスワード">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <a href="#" class="col-lg-offset-1 col-lg-10 btn btn-primary btn-login">ログイン</a>
+                                        </div>
+                                        <div class="form-group">
+                                            <a data-toggle="tab" href="#forgot" class="">パスワードを忘れたらこちら</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="forgot" class="tab-pane fade">
+                                <div class="col-lg-offset-2 col-lg-8">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-1 col-lg-1">
+                                                <img src="img/email-icon.png" class="icon-email" alt="">
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <input type="password" class="form-control form-login-detail" placeholder="パスワード">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <a href="#" class="col-lg-offset-1 col-lg-5 btn btn-primary btn-submit">OK</a>
+                                            <a data-toggle="tab" href="#login" class="col-lg-5 btn btn-danger btn-cancel" id="#btn-cancel">キャンセル</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  LOGIN TAB -->
+                <!-- FORGOT TAB -->
+                <div class="row">
+
+                </div>
+                <!-- FORGOT TAB -->
+            </div>
+        </div>
+    </body>
+</html>

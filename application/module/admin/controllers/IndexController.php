@@ -11,7 +11,7 @@ class IndexController extends Controller{
 			URL::redirect('admin', 'index', 'index');
 		}
 		
-		$this->_templateObj->setFolderTemplate('admin/main/');
+		$this->_templateObj->setFolderTemplate('admin/ver1/');
 		$this->_templateObj->setFileTemplate('login.php');
 		$this->_templateObj->setFileConfig('template.ini');
 		$this->_templateObj->load();

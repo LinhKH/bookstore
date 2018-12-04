@@ -51,7 +51,7 @@
 	<div class="clear"></div>
 </div>
 
-
+<!--MORE DETAILS && RELATE BOOK -->
 <div id="demo" class="demolayout">
 
 	<ul id="demo-nav" class="demolayout">
