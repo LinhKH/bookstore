@@ -87,10 +87,10 @@ class Bootstrap{
 	}
 	
 	// ERROR CONTROLLER
-	public function _error(){
+	/* public function _error(){
 		require_once MODULE_PATH . 'default' . DS . 'controllers' . DS . 'ErrorController.php';
 		$this->_controllerObject = new ErrorController();
 		$this->_controllerObject->setView('default');
 		$this->_controllerObject->indexAction();
-	}
+	} */
 }

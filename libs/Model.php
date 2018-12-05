@@ -191,9 +191,12 @@ class Model{
 			}
 		}
 		return $result;
-	}
-		
-	// EXIST
+  }
+  		
+  /* 
+    return true   :  exists
+    return false  :  not exists
+  */
 	public function isExist($query){
 		if($query != null) {
 			$this->resultQuery = $this->query($query);
